@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/LuisRobledo117/fullstack-javascript-project-98/issues"
   },
-  "homepage": "https://github.com/LuisRobledo117/fullstack-javascript-project-98#readme"
+  "homepage": "https://github.com/LuisRobledo117/fullstack-javascript-project-98#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0"
+  }
 }
