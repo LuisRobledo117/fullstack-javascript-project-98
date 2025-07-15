@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
 import askName from './cli.js';
+import { getAnwer, getRandonNumero } from '../index.js';
 
 const startEvenGames = () => {
   const userName = askName();
@@ -8,25 +8,25 @@ const startEvenGames = () => {
   let correctAnswers = 0;
 
   while (correctAnswers < 3) {
-    const numRandom = Math.floor(Math.random() * 100) + 1;
-    console.log(`Pregunta: ${numRandom}`);
-    const answer = readlineSync.question('Tu respuesta: ').toLowerCase();
+    const numRand = getRandonNumero();
+    console.log(`Pregunta: ${numRand}`);
+    const yourAnswer = getAnwer().toLowerCase();
 
-    const correctAnswer = numRandom % 2 === 0 ? 'yes' : 'no';
+    const correctAnswer = numRand % 2 === 0 ? 'yes' : 'no';
 
-    if (correctAnswer === !'yes' && correctAnswer === !'no') {
-      console.log(`${answer} es una respuesta incorrecta; La respuesta correcta era ${correctAnswer}.`);
+    if (correctAnswer !== 'yes' && correctAnswer !== 'no') {
+      console.log(`${yourAnswer} es una respuesta incorrecta; La respuesta correcta era ${correctAnswer}.`);
       console.log(`¡Intentémoslo de nuevo, ${userName} !`);
       // eslint-disable-next-line no-continue
       continue;
     }
 
-    if (answer === correctAnswer) {
+    if (yourAnswer === correctAnswer) {
       console.log('¡Correcto!');
 
       correctAnswers += 1;
     } else {
-      console.log(`${answer} es una respuesta incorrecta; La respuesta correcta era ${correctAnswer}.`);
+      console.log(`${yourAnswer} es una respuesta incorrecta; La respuesta correcta era ${correctAnswer}.`);
       console.log(`¡Intentémoslo de nuevo, ${userName} !`);
     }
   }
