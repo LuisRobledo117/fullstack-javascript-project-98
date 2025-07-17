@@ -38,7 +38,19 @@ const correctAttempts = (callback) => {
   console.log(`¡Felicidades, ${userName}!`);
 };
 
+const getProgression = () => {
+  let numProgression = [];
+  const intervalNum = Math.floor(Math.random() * 10) + 1;
+  let num = Math.floor(Math.random() * 100) + 1;
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < 10; i++) {
+    numProgression.push(num);
+    num += intervalNum;
+  }
+  return numProgression;
+};
+
 export {
-  getRandonNumero, getAnswer, incorrectMessage, correctAttempts,
+  getRandonNumero, getAnswer, incorrectMessage, correctAttempts, getProgression,
 };
 export default getOperation;
