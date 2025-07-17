@@ -1,12 +1,9 @@
-import askName from './cli.js';
-import getOperation, { getAnswer, getRandonNumero } from '../index.js';
+import getOperation, {
+  getAnswer, getRandonNumero, correctAttempts, incorrectMessage,
+} from '../index.js';
 
 const startGamesCal = () => {
-  const userName = askName();
-
-  let correctAnswers = 0;
-
-  while (correctAnswers < 3) {
+  correctAttempts(() => {
     console.log('¿Cuál es el resultado de la expresión?');
     const operador = getOperation();
     const num1 = getRandonNumero();
@@ -33,15 +30,11 @@ const startGamesCal = () => {
     }
 
     if (answer === result) {
-      console.log('¡Correcto!');
-      correctAnswers += 1;
-    } else {
-      console.log(`${answer} es una respuesta incorrecta; La respuesta correcta era ${result}.`);
-      console.log(`¡Intentémoslo de nuevo, ${userName} !`);
+      return true;
     }
-  }
-
-  console.log(`¡Felicidades, ${userName}!`);
+    incorrectMessage(answer, result);
+    return false;
+  });
 };
 
 export default startGamesCal;
