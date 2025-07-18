@@ -12,7 +12,7 @@ const startEvenGames = () => {
 
     const correctAnswer = numRand % 2 === 0 ? 'yes' : 'no';
 
-    if (correctAnswer !== 'yes' && correctAnswer !== 'no') {
+    if (yourAnswer !== 'yes' && yourAnswer !== 'no') {
       incorrectMessage(yourAnswer, correctAnswer);
       return false;
     }

@@ -50,7 +50,22 @@ const getProgression = () => {
   return numProgression;
 };
 
+const getPrime = (num) => {
+  if (num <= 1) return false;
+  if (num === 2) return true;
+  if (num % 2 === 0) return false;
+
+  const numLimite = Math.sqrt(num);
+  for (let i = 3; i <= numLimite; i += 2) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+};
+
 export {
-  getRandonNumero, getAnswer, incorrectMessage, correctAttempts, getProgression,
+  getRandonNumero, getAnswer, incorrectMessage, correctAttempts, getProgression, getPrime,
 };
 export default getOperation;
