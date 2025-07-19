@@ -15,8 +15,9 @@ const getAnswer = () => {
 };
 
 const incorrectMessage = (answer, correctAnswer) => {
-  console.log(`'${answer}' es una respuesta incorrecta; La respuesta correcta era '${correctAnswer}'.`);
-  console.log(`¡Intentémoslo de nuevo, ${userName} !`);
+  console.log(`'${answer}' es una respuesta incorrecta ;(. La respuesta correcta era '${correctAnswer}'.
+    ¡Intentémoslo de nuevo, ${userName}!
+    `);
 };
 
 const getRandonNumero = () => {
