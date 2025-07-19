@@ -33,6 +33,8 @@ const correctAttempts = (callback) => {
     if (attempt === true) {
       console.log('¡Correcto!');
       attempts += 1;
+    } else {
+      return;
     }
   }
   console.log(`¡Felicidades, ${userName}!`);
