@@ -4,7 +4,7 @@ const askName = () => {
   console.log('¡Bienvenido a Brain Games!');
 
   const userName = readlineSync.question('¿Cuál es tu nombre? ');
-  console.log(`¡Hi, ${userName}!`);
+  console.log(`¡Hola, ${userName}!`);
   return userName;
 };
 
