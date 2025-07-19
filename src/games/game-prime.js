@@ -8,7 +8,7 @@ const startGamePrime = () => {
 
   correctAttempts(() => {
     const numRandom = Math.abs(getRandonNumero());
-    console.log(`Pregrunta: ${numRandom}`);
+    console.log(`Pregunta: ${numRandom}`);
     const answer = getAnswer().toLowerCase();
 
     const correctAnswer = getPrime(numRandom) ? 'yes' : 'no';
